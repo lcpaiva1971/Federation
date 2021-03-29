@@ -1,0 +1,14 @@
+{
+  "S_COMBINED": {
+    "target": {
+      "object": "BASKETANALYSISDATA_ALL",
+      "schema": "COMBINEDBASKETANALYSISDATA"
+    }
+  },
+  "S_VT_DL": {
+    "target": {
+      "object": "VT_TLOG_F_H",
+      "schema": "VT_DATALAKE_T1"
+    }
+  }
+}

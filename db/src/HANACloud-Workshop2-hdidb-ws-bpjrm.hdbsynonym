@@ -1,0 +1,8 @@
+{
+  "com.sap::TLOG_F_C": {
+    "target": {
+      "object": "TLOG_F_C",
+      "schema": "HANACLOUD_WORKSHOP2_HDI_DB_1"
+    }
+  }
+}

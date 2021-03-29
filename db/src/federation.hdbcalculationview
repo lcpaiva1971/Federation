@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="federation" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="federation"/>
+<localVariables/>
+<variableMappings/>
+<executionHints name="query_level_sql_hints" value="RESULT_CACHE"/>
+<executionHints name="qo_pop_hints" value="RESULT_CACHE"/>
+<dataSources>
+  <DataSource id="com.sap::TLOG_F_C">
+    <resourceUri>com.sap::TLOG_F_C</resourceUri>
+  </DataSource>
+  <DataSource id="S_VT_DL">
+    <resourceUri>S_VT_DL</resourceUri>
+  </DataSource>
+  <DataSource id="VT_TLOG_F_O">
+    <resourceUri>VT_TLOG_F_O</resourceUri>
+  </DataSource>
+</dataSources>
+<staticResultCache cacheEnabled="true" retentionPeriod="60" force="false">
+  <cacheColumn id="OrderYear"/>
+  <cacheColumn id="ItemPrice"/>
+  <cacheColumn id="SOURCE"/>
+</staticResultCache>
+<calculationViews>
+  <calculationView xsi:type="Calculation:UnionView" id="Union_1">
+    <viewAttributes>
+      <viewAttribute id="Index"/>
+      <viewAttribute id="ClientID"/>
+      <viewAttribute id="Name"/>
+      <viewAttribute id="Gender"/>
+      <viewAttribute id="Birthdate"/>
+      <viewAttribute id="Occupation"/>
+      <viewAttribute id="City"/>
+      <viewAttribute id="City_"/>
+      <viewAttribute id="latitude"/>
+      <viewAttribute id="longitude"/>
+      <viewAttribute id="OrderID"/>
+      <viewAttribute id="OrderDate"/>
+      <viewAttribute id="OrderYear" aggregationType="sum"/>
+      <viewAttribute id="OrderPrice" aggregationType="sum"/>
+      <viewAttribute id="OrderPay" aggregationType="sum"/>
+      <viewAttribute id="No_OrderItems" aggregationType="sum"/>
+      <viewAttribute id="ProductName"/>
+      <viewAttribute id="ItemCategory"/>
+      <viewAttribute id="ItemPrice" aggregationType="sum"/>
+      <viewAttribute id="ItemSoldPrice" aggregationType="sum"/>
+      <viewAttribute id="ItemDiscount" aggregationType="sum"/>
+      <viewAttribute id="No_Item" aggregationType="sum"/>
+      <viewAttribute id="ItemTotalSoldPrice" aggregationType="sum"/>
+      <viewAttribute id="Index_1"/>
+      <viewAttribute id="ClientID_1"/>
+      <viewAttribute id="Name_1"/>
+      <viewAttribute id="Gender_1"/>
+      <viewAttribute id="Birthdate_1"/>
+      <viewAttribute id="Occupation_1"/>
+      <viewAttribute id="City_1"/>
+      <viewAttribute id="City__1"/>
+      <viewAttribute id="latitude_1"/>
+      <viewAttribute id="longitude_1"/>
+      <viewAttribute id="OrderID_1"/>
+      <viewAttribute id="OrderDate_1"/>
+      <viewAttribute id="OrderYear_1" aggregationType="sum"/>
+      <viewAttribute id="OrderPrice_1" aggregationType="sum"/>
+      <viewAttribute id="OrderPay_1" aggregationType="sum"/>
+      <viewAttribute id="No_OrderItems_1" aggregationType="sum"/>
+      <viewAttribute id="ProductName_1"/>
+      <viewAttribute id="ItemCategory_1"/>
+      <viewAttribute id="ItemPrice_1" aggregationType="sum"/>
+      <viewAttribute id="ItemSoldPrice_1" aggregationType="sum"/>
+      <viewAttribute id="ItemDiscount_1" aggregationType="sum"/>
+      <viewAttribute id="No_Item_1" aggregationType="sum"/>
+      <viewAttribute id="ItemTotalSoldPrice_1" aggregationType="sum"/>
+      <viewAttribute id="Index_2"/>
+      <viewAttribute id="ClientID_2"/>
+      <viewAttribute id="Name_2"/>
+      <viewAttribute id="Gender_2"/>
+      <viewAttribute id="Birthdate_2"/>
+      <viewAttribute id="Occupation_2"/>
+      <viewAttribute id="City_2"/>
+      <viewAttribute id="City__2"/>
+      <viewAttribute id="latitude_2"/>
+      <viewAttribute id="longitude_2"/>
+      <viewAttribute id="OrderID_2"/>
+      <viewAttribute id="OrderDate_2"/>
+      <viewAttribute id="OrderYear_2" aggregationType="sum"/>
+      <viewAttribute id="OrderPrice_2" aggregationType="sum"/>
+      <viewAttribute id="OrderPay_2" aggregationType="sum"/>
+      <viewAttribute id="No_OrderItems_2" aggregationType="sum"/>
+      <viewAttribute id="ProductName_2"/>
+      <viewAttribute id="ItemCategory_2"/>
+      <viewAttribute id="ItemPrice_2" aggregationType="sum"/>
+      <viewAttribute id="ItemSoldPrice_2" aggregationType="sum"/>
+      <viewAttribute id="ItemDiscount_2" aggregationType="sum"/>
+      <viewAttribute id="No_Item_2" aggregationType="sum"/>
+      <viewAttribute id="ItemTotalSoldPrice_2" aggregationType="sum"/>
+    
+      <viewAttribute datatype="NVARCHAR" length="10" id="SOURCE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="com.sap::TLOG_F_C" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="Index" source="Index"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClientID" source="ClientID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Name" source="Name"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Gender" source="Gender"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Birthdate" source="Birthdate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Occupation" source="Occupation"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="City" source="City"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="City_" source="City_"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="latitude" source="latitude"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="longitude" source="longitude"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderID" source="OrderID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderDate" source="OrderDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderYear" source="OrderYear"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderPrice" source="OrderPrice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderPay" source="OrderPay"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="No_OrderItems" source="No.OrderItems"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProductName" source="ProductName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemCategory" source="ItemCategory"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemPrice" source="ItemPrice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemSoldPrice" source="ItemSoldPrice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemDiscount" source="ItemDiscount"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="No_Item" source="No.Item"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemTotalSoldPrice" source="ItemTotalSoldPrice"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="Index_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ClientID_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="Name_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="Gender_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="Birthdate_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="Occupation_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="City_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="City__1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="latitude_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="longitude_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="OrderID_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="OrderDate_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="OrderYear_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="OrderPrice_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="OrderPay_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="No_OrderItems_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ProductName_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ItemCategory_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ItemPrice_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ItemSoldPrice_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ItemDiscount_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="No_Item_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ItemTotalSoldPrice_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="Index_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ClientID_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="Name_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="Gender_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="Birthdate_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="Occupation_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="City_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="City__2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="latitude_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="longitude_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="OrderID_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="OrderDate_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="OrderYear_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="OrderPrice_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="OrderPay_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="No_OrderItems_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ProductName_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ItemCategory_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ItemPrice_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ItemSoldPrice_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ItemDiscount_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="No_Item_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ItemTotalSoldPrice_2" null="true" value=""/>
+    
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="SOURCE" null="false" value="CURRENT"/>
+    </input>
+    <input node="S_VT_DL" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="Index" source="Index"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClientID" source="ClientID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Name" source="Name"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Gender" source="Gender"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Birthdate" source="Birthdate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Occupation" source="Occupation"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="City" source="City"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="City_" source="City_"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="latitude" source="latitude"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="longitude" source="longitude"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderID" source="OrderID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderDate" source="OrderDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderYear" source="OrderYear"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderPrice" source="OrderPrice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderPay" source="OrderPay"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="No_OrderItems" source="No.OrderItems"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProductName" source="ProductName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemCategory" source="ItemCategory"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemPrice" source="ItemPrice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemSoldPrice" source="ItemSoldPrice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemDiscount" source="ItemDiscount"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="No_Item" source="No.Item"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemTotalSoldPrice" source="ItemTotalSoldPrice"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="Index_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ClientID_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="Name_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="Gender_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="Birthdate_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="Occupation_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="City_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="City__1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="latitude_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="longitude_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="OrderID_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="OrderDate_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="OrderYear_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="OrderPrice_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="OrderPay_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="No_OrderItems_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ProductName_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ItemCategory_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ItemPrice_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ItemSoldPrice_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ItemDiscount_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="No_Item_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ItemTotalSoldPrice_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="Index_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ClientID_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="Name_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="Gender_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="Birthdate_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="Occupation_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="City_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="City__2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="latitude_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="longitude_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="OrderID_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="OrderDate_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="OrderYear_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="OrderPrice_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="OrderPay_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="No_OrderItems_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ProductName_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ItemCategory_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ItemPrice_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ItemSoldPrice_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ItemDiscount_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="No_Item_2" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ItemTotalSoldPrice_2" null="true" value=""/>
+    
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="SOURCE" null="false" value="HISTORY"/>
+    </input>
+    <input node="VT_TLOG_F_O" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="Index" source="Index"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClientID" source="ClientID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Name" source="Name"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Gender" source="Gender"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Birthdate" source="Birthdate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Occupation" source="Occupation"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="City" source="City"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="City_" source="City_"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="latitude" source="latitude"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="longitude" source="longitude"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderID" source="OrderID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderDate" source="OrderDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderYear" source="OrderYear"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderPrice" source="OrderPrice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderPay" source="OrderPay"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="No_OrderItems" source="No.OrderItems"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProductName" source="ProductName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemCategory" source="ItemCategory"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemPrice" source="ItemPrice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemSoldPrice" source="ItemSoldPrice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemDiscount" source="ItemDiscount"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="No_Item" source="No.Item"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemTotalSoldPrice" source="ItemTotalSoldPrice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Index_1" source="Index"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClientID_1" source="ClientID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Name_1" source="Name"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Gender_1" source="Gender"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Birthdate_1" source="Birthdate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Occupation_1" source="Occupation"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="City_1" source="City"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="City__1" source="City_"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="latitude_1" source="latitude"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="longitude_1" source="longitude"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderID_1" source="OrderID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderDate_1" source="OrderDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderYear_1" source="OrderYear"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderPrice_1" source="OrderPrice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderPay_1" source="OrderPay"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="No_OrderItems_1" source="No.OrderItems"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProductName_1" source="ProductName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemCategory_1" source="ItemCategory"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemPrice_1" source="ItemPrice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemSoldPrice_1" source="ItemSoldPrice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemDiscount_1" source="ItemDiscount"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="No_Item_1" source="No.Item"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemTotalSoldPrice_1" source="ItemTotalSoldPrice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Index_2" source="Index"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ClientID_2" source="ClientID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Name_2" source="Name"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Gender_2" source="Gender"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Birthdate_2" source="Birthdate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Occupation_2" source="Occupation"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="City_2" source="City"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="City__2" source="City_"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="latitude_2" source="latitude"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="longitude_2" source="longitude"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderID_2" source="OrderID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderDate_2" source="OrderDate"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderYear_2" source="OrderYear"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderPrice_2" source="OrderPrice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OrderPay_2" source="OrderPay"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="No_OrderItems_2" source="No.OrderItems"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ProductName_2" source="ProductName"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemCategory_2" source="ItemCategory"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemPrice_2" source="ItemPrice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemSoldPrice_2" source="ItemSoldPrice"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemDiscount_2" source="ItemDiscount"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="No_Item_2" source="No.Item"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ItemTotalSoldPrice_2" source="ItemTotalSoldPrice"/>
+    
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="SOURCE" null="false" value="ONLINE"/>
+    </input>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Union_1">
+  <attributes>
+    <attribute id="Index" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Index"/>
+      <keyMapping columnObjectName="Union_1" columnName="Index"/>
+    </attribute>
+    <attribute id="ClientID" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ClientID"/>
+      <keyMapping columnObjectName="Union_1" columnName="ClientID"/>
+    </attribute>
+    <attribute id="Name" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Name"/>
+      <keyMapping columnObjectName="Union_1" columnName="Name"/>
+    </attribute>
+    <attribute id="Gender" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Gender"/>
+      <keyMapping columnObjectName="Union_1" columnName="Gender"/>
+    </attribute>
+    <attribute id="Birthdate" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Birthdate"/>
+      <keyMapping columnObjectName="Union_1" columnName="Birthdate"/>
+    </attribute>
+    <attribute id="Occupation" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Occupation"/>
+      <keyMapping columnObjectName="Union_1" columnName="Occupation"/>
+    </attribute>
+    <attribute id="City" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="City"/>
+      <keyMapping columnObjectName="Union_1" columnName="City"/>
+    </attribute>
+    <attribute id="City_" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="City_"/>
+      <keyMapping columnObjectName="Union_1" columnName="City_"/>
+    </attribute>
+    <attribute id="latitude" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="latitude"/>
+      <keyMapping columnObjectName="Union_1" columnName="latitude"/>
+    </attribute>
+    <attribute id="longitude" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="longitude"/>
+      <keyMapping columnObjectName="Union_1" columnName="longitude"/>
+    </attribute>
+    <attribute id="OrderID" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="OrderID"/>
+      <keyMapping columnObjectName="Union_1" columnName="OrderID"/>
+    </attribute>
+    <attribute id="OrderDate" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="OrderDate"/>
+      <keyMapping columnObjectName="Union_1" columnName="OrderDate"/>
+    </attribute>
+    <attribute id="OrderYear" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="OrderYear"/>
+      <keyMapping columnObjectName="Union_1" columnName="OrderYear"/>
+    </attribute>
+    <attribute id="ProductName" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ProductName"/>
+      <keyMapping columnObjectName="Union_1" columnName="ProductName"/>
+    </attribute>
+    <attribute id="ItemCategory" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ItemCategory"/>
+      <keyMapping columnObjectName="Union_1" columnName="ItemCategory"/>
+    </attribute>
+  
+    <attribute id="SOURCE" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SOURCE"/>
+      <keyMapping columnObjectName="Union_1" columnName="SOURCE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="OrderPrice" order="14" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="OrderPrice"/>
+      <measureMapping columnObjectName="Union_1" columnName="OrderPrice"/>
+    </measure>
+    <measure id="OrderPay" order="15" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="OrderPay"/>
+      <measureMapping columnObjectName="Union_1" columnName="OrderPay"/>
+    </measure>
+    <measure id="No_OrderItems" order="16" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="No_OrderItems"/>
+      <measureMapping columnObjectName="Union_1" columnName="No_OrderItems"/>
+    </measure>
+    <measure id="ItemPrice" order="19" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="ItemPrice"/>
+      <measureMapping columnObjectName="Union_1" columnName="ItemPrice"/>
+    </measure>
+    <measure id="ItemSoldPrice" order="20" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="ItemSoldPrice"/>
+      <measureMapping columnObjectName="Union_1" columnName="ItemSoldPrice"/>
+    </measure>
+    <measure id="ItemDiscount" order="21" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="ItemDiscount"/>
+      <measureMapping columnObjectName="Union_1" columnName="ItemDiscount"/>
+    </measure>
+    <measure id="No_Item" order="22" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="No_Item"/>
+      <measureMapping columnObjectName="Union_1" columnName="No_Item"/>
+    </measure>
+    <measure id="ItemTotalSoldPrice" order="23" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="ItemTotalSoldPrice"/>
+      <measureMapping columnObjectName="Union_1" columnName="ItemTotalSoldPrice"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="Union_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="180"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

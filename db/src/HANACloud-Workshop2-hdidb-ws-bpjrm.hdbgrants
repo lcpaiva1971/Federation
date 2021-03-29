@@ -1,0 +1,16 @@
+{
+  "HANACloud-Workshop2-hdidb-ws-bpjrm": {
+    "object_owner": {
+      "container_roles": [
+        "SELECT_ON_TLOG_F_C_WITH_GRANT#",
+        "LOAD_TLOG_F_C"
+      ]
+    },
+    "application_user": {
+      "container_roles": [
+        "SELECT_ON_TLOG_F_C",
+        "LOAD_TLOG_F_C"
+      ]
+    }
+  }
+}

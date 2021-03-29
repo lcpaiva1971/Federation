@@ -1,0 +1,19 @@
+{
+"UPS": {
+"object_owner": {
+"roles": [
+"SELECT_ON_BASKETANALYSISDATA_ALL",
+"LOAD_VT_TLOG_F_H",
+"createVTOnT2"
+]
+} 
+,
+"application_user": {
+"roles": [
+"SELECT_ON_BASKETANALYSISDATA_ALL",
+"LOAD_VT_TLOG_F_H",
+"createVTOnT2"
+]
+}
+}
+}
