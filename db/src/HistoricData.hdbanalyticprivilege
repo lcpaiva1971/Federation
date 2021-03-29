@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Privilege:analyticPrivilege xmlns:Privilege="http://www.sap.com/ndb/BiModelPrivilege.ecore" id="HistoricData" privilegeType="SQL_ANALYTIC_PRIVILEGE" schemaVersion="1.1">
+<Privilege:analyticPrivilege xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Privilege="http://www.sap.com/ndb/BiModelPrivilege.ecore" id="HistoricData" privilegeType="SQL_ANALYTIC_PRIVILEGE" schemaVersion="1.1">
     <descriptions defaultDescription="HistoricData"/>
-    <securedModels/>
+    <securedModels>
+      <modelUri>federation</modelUri>
+    </securedModels>
+
+<restriction>
+  <filter attributeName="SOURCE" xsi:type="Privilege:AttributeFilter">
+    <valueFilter xsi:type="AccessControl:SingleValueFilter" including="true" value="HISTORY" lowValue="undefined" highValue="undefined"/>
+  </filter>
+  <attributeName>SOURCE</attributeName>
+  <originInformationModelUri>federation</originInformationModelUri>
+</restriction>
 </Privilege:analyticPrivilege>
